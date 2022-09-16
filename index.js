@@ -24,7 +24,7 @@ resetBtn.addEventListener("click", resetScore);
 
 
 function addScore() {
-	let randomNumber = Math.floor(Math.random() * 6) + 1 
+	const randomNumber = Math.floor(Math.random() * 6) + 1 
 	if(player1Turn) {
 		message.innerHTML = "Player 2 turn"
 		player1Dice.innerHTML = "-"
