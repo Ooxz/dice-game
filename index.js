@@ -33,8 +33,8 @@ function addScore() {
 		player1Dice.innerHTML = randomNumber
 		player1Scoreboard.innerHTML = player1Score
 		player1Turn = false
-		
-		win()
+		winRound()
+		winGame()
 	} else if(player1Turn === false) {
 		message.innerHTML = "Player 1 turn"
 		player1Dice.innerHTML = "-"
@@ -43,7 +43,8 @@ function addScore() {
 		player2Dice.innerHTML = randomNumber
 		player2Scoreboard.innerHTML = player2Score
 		player1Turn = true
-		win()
+		winRound()
+		winGame()
 	}
 	
 }
@@ -66,7 +67,7 @@ function resetScore() {
 
 }
 
-function win() {
+function winRound() {
 	if(player1Score >= 10) {
 		message.innerHTML = "Player 1 win"
 		rollBtn.style.display = "none"
@@ -80,6 +81,10 @@ function win() {
 		player1Turn = true
 		totalPlayer2.innerHTML = player2Wins+=1
 	}  
+	
+}
+
+function winGame() {
 	if (player1Wins === 2) {
 		message.innerHTML = "Player 1 you win the game"
 		player1Wins = 0
