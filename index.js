@@ -32,7 +32,10 @@ function addScore() {
 		player1Score += randomNumber
 		player1Dice.innerHTML = randomNumber
 		player1Scoreboard.innerHTML = player1Score
+		player1Dice.classList.remove("active")
+		player2Dice.classList.add("active")
 		player1Turn = false
+		
 		winRound()
 		winGame()
 	} else if(player1Turn === false) {
@@ -42,7 +45,10 @@ function addScore() {
 		player2Score += randomNumber
 		player2Dice.innerHTML = randomNumber
 		player2Scoreboard.innerHTML = player2Score
+		player1Dice.classList.add("active")
+         player2Dice.classList.remove("active")
 		player1Turn = true
+		
 		winRound()
 		winGame()
 	}
@@ -69,13 +75,13 @@ function resetScore() {
 
 function winRound() {
 	if(player1Score >= 10) {
-		message.innerHTML = "Player 1 win"
+		message.innerHTML = "Player 1 win the set"
 		rollBtn.style.display = "none"
 		resetBtn.style.display = "inline-block"
 		player1Turn = false
 		totalPlayer1.innerHTML = player1Wins+=1
 	} else if (player2Score >= 10) {
-		message.innerHTML = "Player 2 win"
+		message.innerHTML = "Player 2 win the set"
 		rollBtn.style.display = "none"
 		resetBtn.style.display = "inline-block"
 		player1Turn = true
@@ -86,14 +92,14 @@ function winRound() {
 
 function winGame() {
 	if (player1Wins === 2) {
-		message.innerHTML = "Player 1 you win the game"
+		message.innerHTML = "Player 1 you win the game 🥳"
 		player1Wins = 0
 		player2Wins = 0
 		totalPlayer1.innerHTML = 0
 		totalPlayer2.innerHTML = 0
 		player1Turn = false
 	} else if (player2Wins === 2) {
-		message.innerHTML = "Player 2 you win the game"
+		message.innerHTML = "Player 2 you win the game  🎉"
 		player1Wins = 0
 		player2Wins = 0
 		totalPlayer1.innerHTML = 0
