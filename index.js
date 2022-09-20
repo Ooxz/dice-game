@@ -53,6 +53,7 @@ function addScore() {
 		winGame()
 	}
 	
+	
 }
 
 function resetScore() {
